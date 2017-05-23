@@ -18,6 +18,8 @@ set(SOURCE_FILES
         source/tdogl/Shader.h
         source/tdogl/Texture.cpp
         source/tdogl/Texture.h
+        source/tdogl/Camera.cpp
+        source/tdogl/Camera.h
         source/main.cpp)
 
 add_executable(04_camera ${SOURCE_FILES})
