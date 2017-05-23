@@ -128,7 +128,7 @@ static tdogl::Texture* LoadTexture(const char* filename) {
 // initialises the gWoodenCrate global
 static void LoadWoodenCrateAsset() {
     // set all the elements of gWoodenCrate
-    gWoodenCrate.shaders = LoadShaders("vertex-shader.txt", "fragment-shader.txt");
+    gWoodenCrate.shaders = LoadShaders("vertex-shader.glsl", "fragment-shader.glsl");
     gWoodenCrate.drawType = GL_TRIANGLES;
     gWoodenCrate.drawStart = 0;
     gWoodenCrate.drawCount = 6*2*3;

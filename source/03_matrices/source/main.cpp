@@ -16,7 +16,7 @@
  limitations under the License.
  */
 
-#include "platform.hpp"
+//#include "platform.hpp"
 
 // third-party libraries
 #include <GL/glew.h>
@@ -49,8 +49,8 @@ GLfloat gDegreesRotated = 0.0f;
 // loads the vertex shader and fragment shader, and links them to make the global gProgram
 static void LoadShaders() {
     std::vector<tdogl::Shader> shaders;
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("vertex-shader.txt"), GL_VERTEX_SHADER));
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("fragment-shader.txt"), GL_FRAGMENT_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile("source/03_matrices/resources/vertex-shader.glsl", GL_VERTEX_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile("source/03_matrices/resources/fragment-shader.glsl", GL_FRAGMENT_SHADER));
     gProgram = new tdogl::Program(shaders);
 
     gProgram->use();
@@ -145,7 +145,7 @@ static void LoadCube() {
 
 // loads the file "wooden-crate.jpg" into gTexture
 static void LoadTexture() {
-    tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile(ResourcePath("wooden-crate.jpg"));
+    tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile("source/03_matrices/resources/wooden-crate.jpg");
     bmp.flipVertically();
     gTexture = new tdogl::Texture(bmp);
 }

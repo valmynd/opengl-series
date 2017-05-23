@@ -5,7 +5,7 @@
 *.opensdf
 *.VC.db
 **/Debug/
-
+.idea
 # Xcode crap
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
@@ -14,3 +14,4 @@ build/
 # linux build output
 platforms/linux/*/bin/
 platforms/linux/*/obj/
+cmake-build-debug/

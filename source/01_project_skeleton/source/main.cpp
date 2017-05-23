@@ -16,7 +16,7 @@
  limitations under the License.
  */
 
-#include "platform.hpp"
+//#include "platform.hpp"
 
 // third-party libraries
 #include <GL/glew.h>
@@ -45,8 +45,8 @@ GLuint gVBO = 0;
 // loads the vertex shader and fragment shader, and links them to make the global gProgram
 static void LoadShaders() {
     std::vector<tdogl::Shader> shaders;
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("vertex-shader.txt"), GL_VERTEX_SHADER));
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath("fragment-shader.txt"), GL_FRAGMENT_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile("source/01_project_skeleton/resources/vertex-shader.glsl", GL_VERTEX_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile("source/01_project_skeleton/resources/fragment-shader.glsl", GL_FRAGMENT_SHADER));
     gProgram = new tdogl::Program(shaders);
 }
 

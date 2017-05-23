@@ -23,7 +23,7 @@
 //uses stb_image to try load files
 #define STBI_FAILURE_USERMSG
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
+#include "stb_image.h"
 
 using namespace tdogl;
 

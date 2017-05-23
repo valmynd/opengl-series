@@ -16,7 +16,7 @@
  limitations under the License.
  */
 
-#include "platform.hpp"
+//#include "platform.hpp"
 
 // third-party libraries
 #include <GL/glew.h>
@@ -106,15 +106,15 @@ Light gLight;
 // returns a new tdogl::Program created from the given vertex and fragment shader filenames
 static tdogl::Program* LoadShaders(const char* vertFilename, const char* fragFilename) {
     std::vector<tdogl::Shader> shaders;
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath(vertFilename), GL_VERTEX_SHADER));
-    shaders.push_back(tdogl::Shader::shaderFromFile(ResourcePath(fragFilename), GL_FRAGMENT_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile(vertFilename, GL_VERTEX_SHADER));
+    shaders.push_back(tdogl::Shader::shaderFromFile(fragFilename, GL_FRAGMENT_SHADER));
     return new tdogl::Program(shaders);
 }
 
 
 // returns a new tdogl::Texture created from the given filename
 static tdogl::Texture* LoadTexture(const char* filename) {
-    tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile(ResourcePath(filename));
+    tdogl::Bitmap bmp = tdogl::Bitmap::bitmapFromFile(filename);
     bmp.flipVertically();
     return new tdogl::Texture(bmp);
 }
@@ -123,11 +123,11 @@ static tdogl::Texture* LoadTexture(const char* filename) {
 // initialises the gWoodenCrate global
 static void LoadWoodenCrateAsset() {
     // set all the elements of gWoodenCrate
-    gWoodenCrate.shaders = LoadShaders("vertex-shader.txt", "fragment-shader.txt");
+    gWoodenCrate.shaders = LoadShaders("source/07_more_lighting/resources/vertex-shader.glsl", "source/07_more_lighting/resources/fragment-shader.glsl");
     gWoodenCrate.drawType = GL_TRIANGLES;
     gWoodenCrate.drawStart = 0;
     gWoodenCrate.drawCount = 6*2*3;
-    gWoodenCrate.texture = LoadTexture("wooden-crate.jpg");
+    gWoodenCrate.texture = LoadTexture("source/07_more_lighting/resources/wooden-crate.jpg");
     glGenBuffers(1, &gWoodenCrate.vbo);
     glGenVertexArrays(1, &gWoodenCrate.vao);
 
